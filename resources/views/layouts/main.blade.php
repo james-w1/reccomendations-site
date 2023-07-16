@@ -36,10 +36,20 @@
                 @if (Auth::user())
                     <a 
                         class="p-2 text-grey-600 hover:text-blue-400"
-                        href="{{ route('profile.show', ['user'=>Auth::user()]) }}"
+                        href=""
                     >
                         {{ Auth::user()->name }}
                     </a>
+                    <a 
+                        class="p-2 text-grey-600 hover:text-blue-400"
+                        href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                    >
+                        log-out
+                    </a>
+                    
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
                 @else
                     <a 
                         class="p-2 text-grey-600 hover:text-blue-400"
