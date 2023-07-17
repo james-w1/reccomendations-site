@@ -17,7 +17,7 @@
         @vite('resources/css/app.css')
 
     </head>
-    <body class="min-h-screen font-sans antialiased bg-slate-50">
+    <body class="min-h-screen font-sans antialiased bg-slate-50 overflow-hidden">
         <div class="flex items-center justify-between border-b border-slate-400 shadow-md sticky top-0 bg-slate-200 h-10 w-full">
             <div>
                 <h3
@@ -72,7 +72,7 @@
             </div>
         </div>
 
-        <div class="p-2">
+        <div class="">
             @yield('content')
             <!--
             <div class="w-screen bg-primary-200">

@@ -1,5 +1,9 @@
 @extends('layouts.main')
 
 @section('content')
-    @livewire('search')
+    <div class="flex mt-6">
+        <div class="m-auto">
+            @livewire('search')
+        </div>
+    </div>
 @endsection
