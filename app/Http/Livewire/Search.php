@@ -9,6 +9,7 @@ class Search extends Component
 {
     public $query = '';
     public $searchResults;
+    public $selected;
 
     public function mount() {
         $this->searchResults = NULL;
@@ -31,5 +32,24 @@ class Search extends Component
 
             $this->searchResults = Recommendation::select('type')->distinct()->where('type', 'like', $fuzzy)->get();
         }
+    }
+
+    public function selectResult($result)
+    {
+        $this->selected = Recommendation::where('type', '=', $result)->get();
+    }
+
+    public function back()
+    {
+        $this->query = $this->selected->first()->type;
+        $this->updatedQuery($this->query);
+        $this->selected = NULL;
+    }
+
+    public function clear()
+    {
+        $this->query = "";
+        $this->updatedQuery($this->query);
+        $this->selected = NULL;
     }
 }
