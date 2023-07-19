@@ -45,7 +45,7 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function recommendations(): BelongsToMany
+    public function recommendations()
     {
         return $this->belongsToMany(Recommendation::class);
     }

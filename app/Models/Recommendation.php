@@ -21,7 +21,7 @@ class Recommendation extends Model
         'phone_number',
     ];
 
-    public function users(): BelongsToMany
+    public function users()
     {
         return $this->belongsToMany(User::class);
     }

@@ -2,7 +2,7 @@
     @if (!$selected)
         <div class="relative">
             <label name="lblSearch text-gray-800">
-                find me a
+                Find me a
                 <input
                     class="h-6 rounded-md bg-slate-100 peer"
                     type="text"
@@ -48,9 +48,9 @@
                     take me back
                 </div>
             </button>
-            @foreach ($selected as $rec)
-                @livewire('show-rec', ['rec' => $rec])
-            @endforeach
         </div>
+        @foreach ($selected as $rec)
+            @livewire('show-rec', ['rec' => $rec])
+        @endforeach
     @endif
 </div>
